@@ -15,7 +15,7 @@ int main(){
     int desconto_desejado=0;
     std::cin>>desconto_desejado;
 
-    if(desconto_desejado!=1||desconto_desejado!=0)
+    if(desconto_desejado!=1||desconto_desejado!=2)
     {
         std::cout<<"ERRO! OPCAO INVALIDA"<<std::endl;
     }
