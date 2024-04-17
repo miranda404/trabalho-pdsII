@@ -11,6 +11,6 @@ As categorias são: eletrodoméstico[1],moveis[2],decoração[3].
 As faixas de preço são: [1-50],[51-100],[101-150],[200+].
 
 os objetos devem ser listados como:
-nome categoria[1-3] faixa de preço[1-4] quantidade no estoque
+nome, categoria[1-3], faixa de preço[1-4], quantidade no estoque, está com desconto?[1-2]
 
 para as estruturas de iteração funcionarem devem ser espaçados por um " " apenas e uma quebra de linha por item
