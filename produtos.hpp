@@ -5,14 +5,14 @@
 
 
 class PRODUTO{
-    
     //IMPLEMENTAÇÃO
+    
     private:
         std::string nome;
-        int tipo=0;                  //1=eletrodomesticos,2=movel,3=decoracao
+        int tipo=0;                                              //1=eletrodomesticos,2=movel,3=decoracao
         int faixa_preco=0;
         int estoque=0;
-        int desconto=0;             //1=Sim,0=Nao
+        int desconto=0;                                         //1=Sim,0=Nao
 
         std::vector<PRODUTO> produtos;                          //Vetor de produtos
 
@@ -122,4 +122,5 @@ class PRODUTO{
                     }
         }
     }
+
 };
