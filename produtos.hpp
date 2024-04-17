@@ -37,9 +37,11 @@ class PRODUTO{
                 }*/
 
                     //ORGANIZAR ARQUIVO
-                std::vector<std::vector<std::vector<PRODUTO>>> matriz_de_produtos;      //Ela terá que ser tridmensional já que existem objetos c mesmo tipo/preco
-                    for(int i=0;i<)
+                std::vector<std::vector<PRODUTO>> matriz_eletrodomesticos;  //serão 1 vetor pra cada tipo
+                std::vector<std::vector<PRODUTO>> matriz_moveis;
+                std::vector<std::vector<PRODUTO>> matriz_decoracao;
 
+                
 
 
             }
