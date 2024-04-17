@@ -9,7 +9,7 @@ class PRODUTO{
     
     private:
         std::string nome;
-        int tipo=0;                                              //1=eletrodomesticos,2=movel,3=decoracao
+        int tipo=0;                                             //1=eletrodomesticos,2=movel,3=decoracao
         int faixa_preco=0;
         int estoque=0;
         int desconto=0;                                         //1=Sim,0=Nao
@@ -26,7 +26,7 @@ class PRODUTO{
 
         //ABRIR ARQUIVO PARA LEITURA E MANIPULAR O VETOR <produtos>
         void ler_arquivo(){
-            std::ifstream arq("C:\\Users\\lucas\\Desktop\\TRABALHO\\catalogo.txt");      //CRIADA DE UM OBJETO DA CLASSE IFSTREAM
+            std::ifstream arq("catalogo.txt");      //CRIADA DE UM OBJETO DA CLASSE IFSTREAM
             if(!arq){
                 std::cout<<"ERRO AO ABRIR O ARQUIVO!"<<std::endl;       
             }
