@@ -12,9 +12,11 @@ class PRODUTO{
         int tipo=0;                  //1=eletrodomesticos,2=movel,3=decoracao
         int faixa_preco=0;
         int estoque=0;
+        int desconto=0;             //1=Sim,0=Nao
 
         std::vector<PRODUTO> produtos;                          //Vetor de produtos
 
+        std::vector<PRODUTO> vetor_descontos;
         std::vector<PRODUTO> vetor_eletrodomesticos;            
         std::vector<PRODUTO> vetor_moveis;                      //Vetores de cada tipo
         std::vector<PRODUTO> vetor_decoracao;
@@ -32,7 +34,7 @@ class PRODUTO{
             //LEITURA 
             else{
                 PRODUTO temp;
-                while(arq>>temp.nome>>temp.tipo>>temp.faixa_preco>>temp.estoque){  //Enquanto ler, atribuir a temp
+                while(arq>>temp.nome>>temp.tipo>>temp.faixa_preco>>temp.estoque>>temp.desconto){  //Enquanto ler, atribuir a temp
                     produtos.push_back(temp);                                      //Aqui, ele coloca cada objeto dentro de um vetor <produtos>
                 }
             
@@ -47,6 +49,16 @@ class PRODUTO{
         //CRIAR UM VETOR PARA CADA TIPO DE PRODUTO
         void organizar_vetores(){
                 
+                //VETOR DE DESCONTOS
+                for(int i=0;i<produtos.size();i++){                                
+                    if(produtos[i].desconto==1){
+                        PRODUTO temp;
+                        temp = produtos[i];
+                        vetor_descontos.push_back(temp);
+                    } 
+
+                }
+
                 //VETOR DE ELETRODOMESTICOS
                 for(int i=0;i<produtos.size();i++){                                
                     if(produtos[i].tipo==1){
@@ -77,7 +89,7 @@ class PRODUTO{
         }
         
         //IMPRIMIR ESCOLHA
-        void imprimir_escolha(int tipo,int preco){
+        void imprimir_produto_sem_desconto(int tipo,int preco){
             if(tipo==1){
                 for(int i=0;i<vetor_eletrodomesticos.size();i++){
                     if(vetor_eletrodomesticos[i].faixa_preco==preco){
@@ -101,12 +113,13 @@ class PRODUTO{
                     }
                 }
             }
-
-
-
-
         }
 
-
-
+        void imprimir_produto_com_desconto(){
+                for(int i=0;i<vetor_descontos.size();i++){
+                    if(vetor_descontos[i].desconto==1){
+                        std::cout<<vetor_descontos[i].nome<<" Quantidade no estoque: "<<vetor_descontos[i].estoque<<std::endl;
+                    }
+        }
+    }
 };
