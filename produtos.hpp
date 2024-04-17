@@ -13,84 +13,88 @@ class PRODUTO{
         int faixa_preco=0;
         int estoque=0;
 
+        std::vector<PRODUTO> produtos;                          //Vetor de produtos
+
+        std::vector<PRODUTO> vetor_eletrodomesticos;            
+        std::vector<PRODUTO> vetor_moveis;                      //Vetores de cada tipo
+        std::vector<PRODUTO> vetor_decoracao;
+
     public:
     //INTERFACE
 
-        //ABRIR ARQUIVO PARA LEITURA
+        //ABRIR ARQUIVO PARA LEITURA E MANIPULAR O VETOR <produtos>
         void ler_arquivo(){
             std::ifstream arq("C:\\Users\\lucas\\Desktop\\TRABALHO\\catalogo.txt");      //CRIADA DE UM OBJETO DA CLASSE IFSTREAM
             if(!arq){
                 std::cout<<"ERRO AO ABRIR O ARQUIVO!"<<std::endl;       
             }
-            
-            else{   //LEITURA
-                std::vector<PRODUTO> produtos;      
+        
+            //LEITURA 
+            else{
                 PRODUTO temp;
                 while(arq>>temp.nome>>temp.tipo>>temp.faixa_preco>>temp.estoque){  //Enquanto ler, atribuir a temp
-                    produtos.push_back(temp);       //Aqui, ele coloca cada objeto dentro de um vetor <produtos>
+                    produtos.push_back(temp);                                      //Aqui, ele coloca cada objeto dentro de um vetor <produtos>
                 }
-
+            
                 arq.close();           //FECHA O ARQUIVO
 
-                /*for(int i=0;i<produtos.size();i++){     //PARA TESTES
-                    std::cout<<produtos[i].nome<<" "<<produtos[i].tipo<<std::endl;
+                /*for(int i=0;i<produtos.size();i++){          //PARA TESTES
+                    std::cout<<produtos[i].nome<<" "<<produtos[i].estoque<<std::endl;
                 }*/
+            }
+        }
 
-                    //ORGANIZAR ARQUIVO
-                std::vector<std::vector<PRODUTO>> matriz_eletrodomesticos;  //serão 1 vetor pra cada tipo
-                std::vector<std::vector<PRODUTO>> matriz_moveis;
-                std::vector<std::vector<PRODUTO>> matriz_decoracao;
-
+        //CRIAR UM VETOR PARA CADA TIPO DE PRODUTO
+        void organizar_vetores(){
                 
+                //VETOR DE ELETRODOMESTICOS
+                for(int i=0;i<produtos.size();i++){                                
+                    if(produtos[i].tipo==1){
+                        PRODUTO temp;
+                        temp = produtos[i];
+                        vetor_eletrodomesticos.push_back(temp);
+                    } 
+
+                }
+
+                //VETOR DE MOVEIS
+                for(int i=0;i<produtos.size();i++){                                
+                    if(produtos[i].tipo==2){
+                        PRODUTO temp;
+                        temp = produtos[i];
+                        vetor_moveis.push_back(temp);
+                    }
+                }
+
+                //VETOR DE DECORAÇÕES
+                for(int i=0;i<produtos.size();i++){                                
+                    if(produtos[i].tipo==3){
+                        PRODUTO temp;
+                        temp = produtos[i];
+                        vetor_decoracao.push_back(temp);
+                    }
+                }
+        }
+        
+        //IMPRIMIR ESCOLHA
+        void imprimir_escolha(int tipo,int preco){
+            if(tipo==1){
+                for(int i=0;i<vetor_eletrodomesticos.size();i++){
+                    if(vetor_eletrodomesticos[i].faixa_preco==preco)
+                        std::cout<<vetor_eletrodomesticos[i].nome<<" Quantidade no estoque: "<<vetor_eletrodomesticos[i].estoque<<std::endl;
 
 
+
+
+                }
             }
 
 
-            
+
+
+
         }
-        
-        
-        
 
 
 
-
-        };
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //leitura do arquivo
-
-        //cin>>produto_nome
-        //cin>>produto_tipo      todas essas se jutnarão em registrar()
-        //cin>>produto_preco
-        //cin>>produto_estoque
-
-        //fechar arquivo
-
-        /*Serão necessários métodos para as atribuições, para display dos itens da implementação,
-        por exemplo um método void atribuir_estoque() que manipulará o atributo produto_estoque
-        e outra como void imprimir_estoque(), estes métodos serão agrupados em métodos que atribuirão/
-        imprimirão todas as informações de uma vez*/
-        
-
-
+};
