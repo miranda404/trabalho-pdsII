@@ -26,13 +26,18 @@ int main(){
 
     else{
         std::cout<<"Que tipo de produto voce busca?"<<std::endl;
-        std::cout<<"[1]Eletrodomesticos,[2]Moveis,[3]Decoracoes"<<std::endl;
+        std::cout<<"[1]Eletrodomesticos"<<std::endl;
+        std::cout<<"[2]Moveis"<<std::endl;
+        std::cout<<"[3]Decoracoes"<<std::endl;
 
         int escolha_tipo=0;
         std::cin>>escolha_tipo;
 
         std::cout<<"Que faixa de preco voce deseja?"<<std::endl;
-        std::cout<<"[1](1-50),[2](51-100),[3](101-150),[4](200+)"<<std::endl;
+        std::cout<<"[1](1-50)"<<std::endl;
+        std::cout<<"[2](51-100)"<<std::endl;
+        std::cout<<"[3](101-150)"<<std::endl;
+        std::cout<<"[4](150-200+)"<<std::endl;
 
         int escolha_preco=0;
         std::cin>>escolha_preco;
