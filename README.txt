@@ -14,3 +14,5 @@ os objetos devem ser listados como:
 nome, categoria[1-3], faixa de preço[1-4], quantidade no estoque, está com desconto?[0-1]
 
 para as estruturas de iteração funcionarem devem ser espaçados por um " " apenas e uma quebra de linha por item
+
+link para o projeto apresentado em sala: https://github.com/miranda404/trabalho-VERfinal-pdsii.git
