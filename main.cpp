@@ -15,7 +15,8 @@ int main(){
 
     std::cout<<"Seja bem vindo(a) a nossa loja"<<std::endl;
     std::cout<<"Voce deseja ver os produtos em desconto?"<<std::endl;
-    std::cout<<"[1]Sim,[2],Nao"<<std::endl;
+    std::cout<<"[1]Sim"<<std::endl;
+    std::cout<<"[2]Nao"<<std::endl;
 
     int escolha_desconto=0;
     std::cin>>escolha_desconto;
