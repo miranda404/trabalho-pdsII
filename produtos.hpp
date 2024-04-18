@@ -93,7 +93,7 @@ class PRODUTO{
             if(tipo==1){
                 for(int i=0;i<vetor_eletrodomesticos.size();i++){
                     if(vetor_eletrodomesticos[i].faixa_preco==preco){
-                        std::cout<<vetor_eletrodomesticos[i].nome<<" Quantidade no estoque: "<<vetor_eletrodomesticos[i].estoque<<std::endl;
+                        std::cout<<vetor_eletrodomesticos[i].nome<<"   Quantidade no estoque: "<<vetor_eletrodomesticos[i].estoque<<std::endl;
                     }
                 }
             }
@@ -101,7 +101,7 @@ class PRODUTO{
             else if(tipo==2){
                 for(int i=0;i<vetor_moveis.size();i++){
                     if(vetor_moveis[i].faixa_preco==preco){
-                        std::cout<<vetor_moveis[i].nome<<" Quantidade no estoque: "<<vetor_moveis[i].estoque<<std::endl;
+                        std::cout<<vetor_moveis[i].nome<<"   Quantidade no estoque: "<<vetor_moveis[i].estoque<<std::endl;
                     }
                 }
             }
@@ -109,7 +109,7 @@ class PRODUTO{
             else if(tipo==3){
                 for(int i=0;i<vetor_decoracao.size();i++){
                     if(vetor_decoracao[i].faixa_preco==preco){
-                        std::cout<<vetor_decoracao[i].nome<<" Quantidade no estoque: "<<vetor_decoracao[i].estoque<<std::endl;
+                        std::cout<<vetor_decoracao[i].nome<<"   Quantidade no estoque: "<<vetor_decoracao[i].estoque<<std::endl;
                     }
                 }
             }
@@ -118,7 +118,7 @@ class PRODUTO{
         void imprimir_produto_com_desconto(){
                 for(int i=0;i<vetor_descontos.size();i++){
                     if(vetor_descontos[i].desconto==1){
-                        std::cout<<vetor_descontos[i].nome<<" Quantidade no estoque: "<<vetor_descontos[i].estoque<<std::endl;
+                        std::cout<<vetor_descontos[i].nome<<"   Quantidade no estoque: "<<vetor_descontos[i].estoque<<std::endl;
                     }
         }
     }
